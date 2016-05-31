@@ -1,1 +1,16 @@
-{{categories}}
+<form>
+
+
+<div ng-repeat="(key,value) in categories track by $index">
+  <label>{{value.category}}</label><br/>
+  <a href="#" ng-repeat="(key2,value2) in value.favorites track by $index">{{key2}}<br/></a>
+  <br/><br/>
+</div>
+
+
+</form>
+<div class="Modal-holder" ui-view="modal" autoscroll="false"></div>
+
+<button type="button" ui-sref="Modal.addRubrique">+ Ajouter une rubrique</button>
+<button type="button">+ Ajouter une sous-rubrique</button>
+<button type="button">+ Ajouter un lien</button>
