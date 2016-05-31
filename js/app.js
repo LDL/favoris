@@ -3,17 +3,20 @@ var app = angular.module("appFavoris", ['ui.router','restangular']);
 
 
 app.config(function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
       .state('home', {
         url: '/home',
-        controller: 'myCtrl',
+
         resolve: {
-            myApp: ['service',
+            categories: ['service',
                 function(service) {
-                return service.getBirth();
+                return service.initRubrique();
             }],
         },
+        controller: 'myCtrl',
+        templateUrl: "template/home.html"
       })
 
   });
