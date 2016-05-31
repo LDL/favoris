@@ -3,10 +3,14 @@
 
 <div ng-repeat="(key,value) in categories track by $index">
   <label>{{value.category}}</label><br/>
-  <a href="#" ng-repeat="(key2,value2) in value.favorites track by $index">{{key2}}<br/></a>
+  <a href="#" ng-click="afficherLiens(value2)" ng-repeat="(key2,value2) in value.favorites track by $index">{{key2}}<br/></a>
   <br/><br/>
 </div>
 
+
+<a href="value.href" ng-repeat="(key,value) in liens track by $index">
+{{value.href}}
+</div>
 
 </form>
 <div class="Modal-holder" ui-view="modal" autoscroll="false"></div>
